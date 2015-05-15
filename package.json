@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/XadillaX/illyria-zookeeper-client",
   "dependencies": {
-    "illyria": "^2.1.1"
+    "illyria": "^2.1.1",
+    "sugar": "^1.4.1"
   }
 }

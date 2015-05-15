@@ -1,0 +1,26 @@
+{
+  "name": "illyria-zk",
+  "version": "1.0.0",
+  "description": "Extra zookeeper support for Illyria.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XadillaX/illyria-zookeeper-client.git"
+  },
+  "keywords": [
+    "zookeeper",
+    "illyria"
+  ],
+  "author": "XadillaX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XadillaX/illyria-zookeeper-client/issues"
+  },
+  "homepage": "https://github.com/XadillaX/illyria-zookeeper-client",
+  "dependencies": {
+    "illyria": "^2.1.1"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "illyria-zk",
+  "name": "yuna",
   "version": "1.0.0",
   "description": "Extra zookeeper support for Illyria.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/XadillaX/illyria-zookeeper-client.git"
+    "url": "https://github.com/XadillaX/yuna.git"
   },
   "keywords": [
     "zookeeper",
@@ -17,9 +17,9 @@
   "author": "XadillaX",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XadillaX/illyria-zookeeper-client/issues"
+    "url": "https://github.com/XadillaX/yuna/issues"
   },
-  "homepage": "https://github.com/XadillaX/illyria-zookeeper-client",
+  "homepage": "https://github.com/XadillaX/yuna",
   "dependencies": {
     "illyria": "^2.1.1",
     "sugar": "^1.4.1"

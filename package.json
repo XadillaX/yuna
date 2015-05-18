@@ -4,7 +4,7 @@
   "description": "Extra zookeeper support for Illyria.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "ZK_NO_WARN=true mocha"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,12 @@
     "algorithmjs": "0.0.3",
     "async": "^0.9.0",
     "illyria": "^2.1.1",
+    "scarlet-task": "^0.1.0-comment",
     "sugar": "^1.4.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.14",
+    "mocha": "^2.2.5",
+    "should": "^6.0.1"
   }
 }

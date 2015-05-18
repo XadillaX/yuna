@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
+  - "iojs-v1.2.0"
+  - "iojs-v2.0.0"
+before_install:
+  - sudo apt-get install zookeeper
+  - sudo apt-get install zookeeperd
+before_script:
+  - sudo /etc/init.d/zookeeper start
+after_script: ZK_NO_WARN=true istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

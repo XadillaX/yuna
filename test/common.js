@@ -6,7 +6,7 @@
  */
 var Illyria = require("illyria");
 
-var ZK_CONNECTION_STRING = exports.ZK_CONNECTION_STRING = "127.0.0.1:2181";
+var ZK_CONNECTION_STRING = exports.ZK_CONNECTION_STRING = process.env.ZK || "127.0.0.1:2181";
 var ZK_ROOT = exports.ZK_ROOT = "/yuna_mocha";
 var ZK_PREFIX = exports.ZK_PREFIX = "/yuna_";
 var SERVER_HOST = exports.SERVER_HOST = "127.0.0.1";

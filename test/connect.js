@@ -16,8 +16,6 @@ describe("connection test", function() {
     var servers = [];
     var yuna;
 
-    this.timeout(10000);
-
     before(function(callback) {
         var scarlet = new Scarlet(SERVER_COUNT);
         var createServer = function(taskObject) {
@@ -48,9 +46,12 @@ describe("connection test", function() {
     });
 
     it("should has 10 connections", function(callback) {
-        yuna = Yuna.createPool(common.ZK_CONNECTION_STRING, common.ZK_ROOT, common.ZK_PREFIX, {
-            maxPool: 10
-        });
+        yuna = Yuna.createPool(
+            common.ZK_CONNECTION_STRING,
+            common.ZK_ROOT,
+            common.ZK_PREFIX, {
+                maxPool: 10
+            });
 
         var count = 0;
         var ports = {};

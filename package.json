@@ -4,7 +4,7 @@
   "description": "Extra zookeeper support for Illyria.",
   "main": "index.js",
   "scripts": {
-    "test": "ZK_NO_WARN=true mocha"
+    "test": "ZK_NO_WARN=true ./node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",

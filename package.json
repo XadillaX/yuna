@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/XadillaX/yuna",
   "dependencies": {
+    "algorithmjs": "0.0.3",
     "illyria": "^2.1.1",
     "sugar": "^1.4.1"
   }

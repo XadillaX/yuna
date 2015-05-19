@@ -9,5 +9,7 @@ before_install:
   - sudo apt-get install zookeeper
   - sudo apt-get install zookeeperd
 before_script:
+  - sudo pkill -9 java
+  - sudo cp -f ./test/zoo.cfg /etc/zookeeper/conf/zoo.cfg
   - sudo /etc/init.d/zookeeper start
 after_script: ZK_NO_WARN=true istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

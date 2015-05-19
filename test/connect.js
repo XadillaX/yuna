@@ -110,5 +110,30 @@ describe("connection test", function() {
             callback();
         };
     });
+
+    it("can't create more connections", function(callback) {
+        yuna.newConnection(function(err) {
+            err.message.indexOf("connection limit exceeded.").should.above(0);
+            callback();
+        });
+    });
+
+    it("can create more connections forcely", function(callback) {
+        yuna.newConnection(true, function(err, conn) {
+            should(err).be.eql(undefined);
+            conn.should.be.instanceof(Illyria.Client);
+            yuna.clientPosition(conn).should.be.eql(10);
+            callback();
+        });
+    });
+
+    it("can get a usable connection", function(callback) {
+        yuna.getConnection(function(err, conn) {
+            should(err).be.eql(undefined);
+            conn.should.be.instanceof(Illyria.Client);
+            yuna.clientPosition(conn).should.be.eql(0);
+            callback();
+        });
+    });
 });
 

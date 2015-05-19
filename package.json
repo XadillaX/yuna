@@ -28,6 +28,7 @@
     "sugar": "^1.4.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "istanbul": "^0.3.14",
     "mocha": "^2.2.5",
     "should": "^6.0.1"

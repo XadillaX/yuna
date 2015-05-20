@@ -42,6 +42,7 @@ describe("connection test", function() {
     });
 
     after(function() {
+        yuna.destroy();
         for(var i = 0; i < SERVER_COUNT; i++) servers[i].close();
     });
 
@@ -172,6 +173,33 @@ describe("connection test", function() {
         });
     });
 
+    var connections = [];
+    it("should create a new connection because no connection", function(callback) {
+        while(yuna.pool.length) connections.push(yuna.pool.popBack());
+
+        yuna.getConnection(function(err, conn) {
+            should(err).be.eql(undefined);
+            conn.should.be.instanceof(Illyria.Client);
+            yuna.clientPosition(conn).should.be.eql(0);
+            callback();
+        });
+    });
+
+    it("should create a new connection because no availble connection", function(callback) {
+        yuna.pool._head.next.value.status = "CLOSED";
+        yuna.getConnection(function(err, conn) {
+            should(err).be.eql(undefined);
+            conn.should.be.instanceof(Illyria.Client);
+            yuna.clientPosition(conn).should.be.eql(1);
+            
+            yuna.pool._head.next.value.status = "CONNECTED";
+            for(var i = 0; i < connections.length; i++) {
+                yuna.pool.pushFront(connections[i]);
+            }
+
+            callback();
+        });
+    });
 
     it("create with none argument", function(callback) {
         var _yuna = Yuna.createPool();

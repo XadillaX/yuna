@@ -23,7 +23,7 @@
   "dependencies": {
     "algorithmjs": "0.0.3",
     "async": "^0.9.0",
-    "illyria": "^2.1.1",
+    "illyria": "^2.1.2",
     "scarlet-task": "^0.1.0-comment",
     "sugar": "^1.4.1"
   },

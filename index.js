@@ -21,6 +21,16 @@ var Yuna = exports.Yuna = require("./lib/pool");
  * @return {Yuna} the illyria client pool
  */
 exports.createPool = function(connectionString, root, prefix, options) {
-    return new Yuna(connectionString, root, prefix, options);
+    if(arguments.length === 0) {
+        return new Yuna();
+    } else if(arguments.length === 1) {
+        return new Yuna(connectionString);
+    } else if(arguments.length === 2) {
+        return new Yuna(connectionString, root);
+    } else if(arguments.length === 3) {
+        return new Yuna(connectionString, root, prefix);
+    } else {
+        return new Yuna(connectionString, root, prefix, options);
+    }
 };
 

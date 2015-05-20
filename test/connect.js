@@ -135,5 +135,89 @@ describe("connection test", function() {
             callback();
         });
     });
+
+    it("create with none argument", function(callback) {
+        var _yuna = Yuna.createPool();
+
+        var count = 0;
+        var onError = function(err) {
+            err.message.indexOf("NO_NODE").should.above(0);
+            count++;
+            if(count === 10) {
+                finish();
+            }
+        };
+        _yuna.on("error", onError);
+
+        var finish = function() {
+            _yuna.pool.length.should.be.eql(0);
+            _yuna.removeListener("new", onError);
+            _yuna.destroy();
+            callback();
+        };
+    });
+
+    it("create with one argument", function(callback) {
+        var _yuna = Yuna.createPool([ common.ZK_CONNECTION_STRING ]);
+
+        var count = 0;
+        var onError = function(err) {
+            err.message.indexOf("NO_NODE").should.above(0);
+            count++;
+            if(count === 10) {
+                finish();
+            }
+        };
+        _yuna.on("error", onError);
+
+        var finish = function() {
+            _yuna.pool.length.should.be.eql(0);
+            _yuna.removeListener("new", onError);
+            _yuna.destroy();
+            callback();
+        };
+    });
+
+    it("create with two arguments", function(callback) {
+        var _yuna = Yuna.createPool([ common.ZK_CONNECTION_STRING ], { maxPool: 10 });
+
+        var count = 0;
+        var onError = function(err) {
+            err.message.indexOf("NO_NODE").should.above(0);
+            count++;
+            if(count === 10) {
+                finish();
+            }
+        };
+        _yuna.on("error", onError);
+
+        var finish = function() {
+            _yuna.pool.length.should.be.eql(0);
+            _yuna.removeListener("new", onError);
+            _yuna.destroy();
+            callback();
+        };
+    });
+
+    it("create with three arguments", function(callback) {
+        var _yuna = Yuna.createPool([ common.ZK_CONNECTION_STRING ], common.ZK_ROOT, { maxPool: 10 });
+
+        var count = 0;
+        var onError = function(err) {
+            err.message.indexOf("No available server found.").should.above(0);
+            count++;
+            if(count === 10) {
+                finish();
+            }
+        };
+        _yuna.on("error", onError);
+
+        var finish = function() {
+            _yuna.pool.length.should.be.eql(0);
+            _yuna.removeListener("new", onError);
+            _yuna.destroy();
+            callback();
+        };
+    });
 });
 

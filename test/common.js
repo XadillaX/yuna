@@ -23,13 +23,13 @@ exports.createServer = function(port, callback) {
 
     server.expose("test", {
         echo: function(req, resp) {
-            resp.send(req.params);
+            resp.send(req._params);
         },
 
         setTimeout: function(req, resp) {
-            var time = req.params.time;
+            var time = req._params.time;
             setTimeout(function() {
-                resp.send(req.params);
+                resp.send(req._params);
             }, time);
         },
 

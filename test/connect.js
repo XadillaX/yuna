@@ -67,11 +67,14 @@ describe("connection test", function() {
 
         var finish = function() {
             yuna.pool.length.should.be.eql(10);
+            var uuids = {};
             for(var i = 0; i < yuna.pool.length; i++) {
                 var client = yuna.pool.valueAt(i);
                 client.should.be.instanceof(Illyria.Client);
                 client.connectStatus().should.be.eql("CONNECTED");
                 ports[SERVER_START_PORT + i].should.be.eql(true);
+                should(uuids[client.uuid]).be.eql(undefined);
+                uuids[client.uuid] = true;
             }
 
             yuna.removeListener("new", onNew);

@@ -2,7 +2,7 @@
 
 The extra Zookeeper support for Illyria client pool.
 
-[![Coverage Status](https://coveralls.io/repos/XadillaX/yuna/badge.svg?branch=master)](https://coveralls.io/r/XadillaX/yuna?branch=master&time=201505211829)
+[![NPM](https://img.shields.io/npm/v/yuna.svg)](https://www.npmjs.com/package/yuna) [![TravisCI Status](https://img.shields.io/travis/XadillaX/yuna/master.svg)](https://travis-ci.org/XadillaX/yuna) [![Coverage Status](https://coveralls.io/repos/XadillaX/yuna/badge.svg?branch=master)](https://coveralls.io/r/XadillaX/yuna?branch=master&time=201505211829) [![David Status](https://img.shields.io/david/XadillaX/yuna.svg)](https://david-dm.org/XadillaX/yuna)
 
 ![Yuna](yuna.jpg)
 

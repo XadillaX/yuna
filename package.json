@@ -1,6 +1,6 @@
 {
   "name": "yuna",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extra zookeeper support for Illyria.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/XadillaX/yuna",
   "dependencies": {
-    "algorithmjs": "0.0.3",
+    "algorithmjs": "^0.0.3",
     "async": "^1.0.0",
     "illyria": "^2.1.2",
     "node-uuid": "^1.4.3",

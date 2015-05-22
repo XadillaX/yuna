@@ -35,6 +35,7 @@ The parameters and their default value are shown below.
 | ZOOKEEPER_ROOT               | "/illyria"      | The root path for the certain server nodes.                                          |
 | ZOOKEEPER_PREFIX             | "/HB_"          | The prefix for the certain server nodes.                                             |
 | OPTIONS                      | [object Object] | The options for this pool.                                                           |
+| OPTIONS.maxPool              | 10              | The maximum client count in the pool.                                                |
 | OPTIONS.runTimeout           | 10000           | Timeout for one sending operation in million second. (not including retry)           |
 | OPTIONS.connectTimeout       | 5000            | Timeout for the connecting to the server in million second.                          |
 | OPTIONS.retryForGetting      | 5               | Times of retry for getting a usable connection.                                      |
@@ -90,6 +91,38 @@ Most time you needn't to use this method. It will tell the position of the conne
 
 ```javascript
 var idx = yuna.clientPosition(conn);
+```
+
+### Events
+
+#### new
+
+This event will be emitted when a new connection is set.
+
+```javascript
+yuna.on("new", function() {
+    // SOME CODE...
+});
+```
+
+#### error
+
+This event will be emitted when a connection has an error. (But Yuna will reconnect automatically)
+
+```javascript
+yuna.on("error", function() {
+    // SOME CODE...
+});
+```
+
+#### close
+
+This event will be emitted when a connection is disconnected.
+
+```javascript
+yuna.on("close", function() {
+    // SOME CODE...
+});
 ```
 
 ## Contribution

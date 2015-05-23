@@ -50,8 +50,9 @@ The parameters and their default value are shown below.
 The main method you should use in your program is `Yuna::send`. The parameters are the same as [Illyria Client](https://github.com/XadillaX/illyria2#send-a-message-to-rpc-server).
 
 ```javascript
-yuna.send("module", "method", DATA, function(err, data) {
-    console.log(err, data);
+yuna.send("module", "method", DATA, function(err, data, conn) {
+    // `conn` is the current connection
+    console.log(err, data, conn);
 });
 ```
 

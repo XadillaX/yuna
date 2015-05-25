@@ -12,7 +12,7 @@ var Yuna = require("../");
 
 describe("connection test", function() {
     var SERVER_COUNT = 10;
-    var SERVER_START_PORT = 17173;
+    var SERVER_START_PORT = 6655;
     var servers = [];
     var yuna;
 

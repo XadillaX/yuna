@@ -8,10 +8,11 @@ var should = require("should");
 var Scarlet = require("scarlet-task");
 var common = require("./common");
 var Yuna = require("../");
+var Illyria = require("illyria");
 
 describe("send test", function() {
     var SERVER_COUNT = 10;
-    var SERVER_START_PORT = 17173;
+    var SERVER_START_PORT = 6655;
     var servers = [];
     var yuna;
 
@@ -54,9 +55,10 @@ describe("send test", function() {
     });
 
     it("should echo ping", function(callback) {
-        yuna.send("test", "echo", "ping", function(err, text) {
+        yuna.send("test", "echo", "ping", function(err, text, conn) {
             should(err).be.eql(undefined);
             text.should.be.eql("ping");
+            conn.should.be.instanceof(Illyria.Client);
             callback();
         });
     });

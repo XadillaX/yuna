@@ -77,6 +77,7 @@ describe("connection test", function() {
                 uuids[client.uuid] = true;
             }
 
+            yuna.availableCount().should.be.eql(10);
             yuna.removeListener("new", onNew);
             callback();
         };
@@ -144,6 +145,7 @@ describe("connection test", function() {
         yuna.pool._head.next.value.status = "CLOSED";
         yuna.getConnection(function(err, conn) {
             should(err).be.eql(undefined);
+            yuna.availableCount().should.be.eql(10);
             conn.should.be.instanceof(Illyria.Client);
             yuna.clientPosition(conn).should.be.eql(1);
             yuna.pool._head.next.value.status = "CONNECTED";
@@ -266,7 +268,6 @@ describe("connection test", function() {
             callback();
         };
     });
-
 
     it("create with two arguments 1⃣️", function(callback) {
         var _yuna = Yuna.createPool([ common.ZK_CONNECTION_STRING ], { maxPool: 10 });

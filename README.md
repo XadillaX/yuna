@@ -86,6 +86,14 @@ yuna.getConnection(function(err, conn) {
 });
 ```
 
+### Available Connection Count
+
+Get current available connection count.
+
+```javascript
+var availables = yuna.availableCount();
+```
+
 ### Client Position
 
 Most time you needn't to use this method. It will tell the position of the connection you passed in in the connection pool.

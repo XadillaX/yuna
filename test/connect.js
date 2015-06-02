@@ -211,8 +211,7 @@ describe("connection test", function() {
 
         var count = 0;
         var onError = function(err) {
-            console.log(err);
-            err.message.indexof("no available server found").should.above(0);
+            err.message.indexOf("No available server found").should.above(0);
             count++;
             if(count === 10) {
                 finish();

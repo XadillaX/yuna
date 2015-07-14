@@ -56,6 +56,18 @@ yuna.send("module", "method", DATA, function(err, data, conn) {
 });
 ```
 
+### Cast
+
+Using cast protocol to send the message. Reference to [Illyria Client](https://github.com/XadillaX/illyria2#send-a-cast-message-to-rpc-server).
+
+```javascript
+yuna.cast("module", "method", DATA, function(err, data, conn) {
+    // `conn` is the current connection
+    // and data will always be `undefined`
+    console.log(err, data, conn);
+});
+```
+
 ### Destroy
 
 Destroy this Yuna pool and disconnect all the connections.

@@ -1,6 +1,6 @@
 {
   "name": "yuna",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Extra zookeeper support for Illyria.",
   "main": "index.js",
   "scripts": {

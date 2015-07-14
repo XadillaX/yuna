@@ -6,6 +6,7 @@ node_js:
   - "iojs-v1.2.0"
   - "iojs-v2.0.0"
 before_install:
+  - ./update_apt
   - sudo apt-get install zookeeper
   - sudo apt-get install zookeeperd
 before_script:

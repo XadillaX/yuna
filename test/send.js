@@ -63,6 +63,14 @@ describe("send test", function() {
         });
     });
 
+    it("should cast without timeout", function(callback) {
+        yuna.cast("test", "setTimeout", { time: 5000 }, function(err, obj) {
+            should(err).be.eql(undefined);
+            should(obj).be.eql(undefined);
+            callback();
+        });
+    });
+
     it("should load balancing while sending", function(callback) {
         yuna.send("test", "setTimeout", { time: 100 }, function(err, obj) {
             should(err).be.eql(undefined);
@@ -147,4 +155,3 @@ describe("send test", function() {
         });
     });
 });
-

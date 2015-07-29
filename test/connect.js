@@ -389,4 +389,3 @@ describe("connection test", function() {
         };
     });
 });
-

@@ -22,7 +22,7 @@
   "homepage": "https://github.com/XadillaX/yuna",
   "dependencies": {
     "algorithmjs": "^0.0.3",
-    "async": "^1.4.0",
+    "async": "^3.2.2",
     "illyria": ">2.2.5 <2.3.0",
     "node-uuid": "^1.4.3",
     "scarlet-task": "^0.1.0-comment",
